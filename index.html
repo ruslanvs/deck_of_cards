@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+<!-- WHITEBOARDED NON-RUNNING VERSION -->
+    <script>
+    
+    class Card{
+        constructor (suit, pip){
+            this.suit = suit;
+            this.pip = pip;
+        }
+        showCard(){
+            console.log( this.suit + " " + this.pip )
+        }
+    }
+    class Deck{
+        constructor(){
+            this.cards = [];
+            for( let i = 0; i < 4; i++ ){
+                for( var j = 1; j <= 13; j++ ){
+                    this.cards.push( new Card( i, j ))
+                }
+            }
+            // shuffle(){
+            //     this.cards( shuffle ) --> built-in method
+            // }
+            deal(){
+                this.cards.pop()
+            }
+            // reset(){
+            //     call the constructor again
+            // }
+        }
+    }
+    class Player{
+        constructor( name ){
+            this.name = name;
+            this.hand = [];
+        }
+        draw(Deck){
+            this.hand.push( Deck.deal())
+            return this;
+        }
+        discard(){
+            this.hand.pop();
+            return this
+        }
+    }
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
